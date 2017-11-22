@@ -16,7 +16,7 @@ syntax on                  " Enable syntax highlighting.
 " -----------------------------------------------------------------------------
 
 set background=dark        " Use colours that look good on a dark background.
-set colorcolumn=80         " Show right column in a highlighted colour.
+set colorcolumn=120        " Show right column in a highlighted colour.
 set completeopt-=preview   " Do not show preview window for ins-completion.
 set diffopt+=foldcolumn:0  " Do not show fold indicator column in diff mode.
 set history=10000          " Number of commands and search patterns to remember.
@@ -39,7 +39,7 @@ set backspace=2            " Allow <BS> and <Del> over everything.
 set hidden                 " Hide when switching buffers instead of unloading.
 set mouse=a                " Enable use of the mouse in all modes.
 set nowrap                 " Disable word wrap.
-set spelllang=en_au        " Check spelling in Australian English
+set spelllang=en_us        " Check spelling in Australian English
 set textwidth=0            " Do not break lines after a maximum width.
 set wildmenu               " Use enhanced command-line completion.
 
@@ -65,8 +65,11 @@ autocmd FileType markdown setlocal foldmethod=marker
 " -----------------------------------------------------------------------------
 
 if has('gui_running')
+  try 
   set guifont=Inconsolata-g\ for\ Powerline:h18
-"  set guifont=InconsolataGo:h18   " Set the font to use.
+catch
+  set guifont=InconsolataGo:h18   " Set the font to use.
+endtry
   set guioptions=                 " Remove all GUI components and options.
   set guicursor+=a:block-blinkon0 " Use non-blinking block cursor.
 
@@ -187,6 +190,7 @@ Plug 'Chiel92/vim-autoformat'       " Integrate external code formatters.
 Plug 'LaTeX-Box-Team/LaTeX-Box'     " Set of LaTeX editing tools.
 Plug 'Shougo/context_filetype.vim'  " Get current context for autocompletion.
 Plug 'benekastah/neomake'           " Asynchronous syntax checking with make.
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'            " Pretty statusline.
 Plug 'cakebaker/scss-syntax.vim'    " Improved SCSS syntax.
 Plug 'hail2u/vim-css3-syntax'       " Syntax for CSS3.
@@ -207,6 +211,7 @@ Plug 'tpope/vim-repeat'             " Enable repeat for tpope's plugins.
 Plug 'tpope/vim-surround'           " Quoting/parenthesizing made simple.
 Plug 'w0ng/vim-hybrid'              " Dark colorscheme.
 
+ 
 " Plugins to enable only for Neovim.
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'     " Asynchronous auto completion.
