@@ -1,6 +1,6 @@
 # SETUP
 * Clone the repo. 
-* Symlink the included vimrc to your `.vimrc` in your home directory: `ln -s /path/to/this/vimrc ~/.vimrc`
+* Symlink the repo to your `.vim` in your home directory: `ln -s /path/to/this/repo ~/.vim`
 * Install the plugins. From the command line run `vim +PlugInstall`.
 
 # Things to know
